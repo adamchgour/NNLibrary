@@ -9,8 +9,8 @@
 int main() {
     std::vector<std::vector<double>> inputs;
     std::vector<std::vector<double>> outputs;  
-    Layer layers = Layer(2, 2, Activation::sigmoid, Activation::sigmoid_derivative);
-    MLP mlp(layers);
-    }
-    return 0;
+    Layer layers = Layer(2, 2, Activation::sigmoid, Activation::sigmoid_derivative); 
+    MLP mlp(layers); // This part should look like this, but the moment I still need to work on header files
+
+    return 0; 
 }
