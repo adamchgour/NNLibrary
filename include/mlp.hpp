@@ -3,15 +3,26 @@
 
 #include <vector>
 #include "layers.hpp"
-#include "loss.hpp"
 
+typedef std::vector<Neuron> Layer;
 
+class Neuron{
+    public:
+    Neuron();
+
+    private:
+    double output;
+    std::vector<double> output_weights;
+    double bias;
+
+};
 class MLP {
     public:
-        std::vector<Layer> layers;
-    
-        MLP(const std::vector<int>& architecture); // architecture = [input_size, hidden1, hidden2, ..., output_size]
-        std::vector<double> forward(const std::vector<double>& inputs); // Forward pass initialization
-        void train(const std::vector<std::vector<double>>& X,const std::vector<std::vector<double>>& Y, int epochs, double lr); // Train the model
+        MLP(const std::vector<unsigned>& architecture); // architecture = [input_size, hidden1, hidden2, ..., output_size]
+        std::vector<double> feed_forward(const std::vector<double>& inputs); // Forward pass initialization
+        void backward(const std::vector<double>& inputs, const std::vector<double>& targets); // Backward pass initialization
+        double predict(const std::vector<double>& inputs); // Predict the output of the network
+    private:
+        std::vector<double> layers; // layers[layer_i][neuron_j]
     };
 #endif // MPL_HPP

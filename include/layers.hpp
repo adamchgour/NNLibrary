@@ -4,13 +4,6 @@
 #include <vector>
 #include <cmath>
 
-class Layer {
-    public:
-    std::vector<std::vector<double>> weights;  //[num_neurons][input_size]
-    std::vector<double> bias; 
-    std::vector<double> forward(const std::vector<double>& inputs);
-    Layer(int num_neurons, int input_size);
-};
 
 namespace Activation {
     double sigmoid(double x){
