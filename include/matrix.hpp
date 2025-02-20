@@ -3,7 +3,6 @@
 #include <vector>
 #include <memory>
 #include <functional>
-#include eigen3/Eigen/Dense>
 
 class Tensor {
     public:
@@ -22,5 +21,6 @@ class Tensor {
         : data(values), requires_grad(requires_grad) {
         grad.resize(values.size(), std::vector<double>(values[0].size(), 0.0));
     }
+
 };  
 #endif // MATRIX_HPP
