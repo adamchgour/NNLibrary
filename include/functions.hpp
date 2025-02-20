@@ -1,5 +1,5 @@
-#ifndef LAYERS_HPP
-#define LAYERS_HPP
+#ifndef FUNCTIONS_HPP
+#define FUNCTIONS_HPP
 
 #include <vector>
 #include <cmath>
