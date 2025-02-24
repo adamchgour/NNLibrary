@@ -7,6 +7,15 @@
 typedef std::vector<std::vector<double>> Matrix;
 typedef std::vector<double> Vector;
 
+Vector addVectors(const Vector& a, const Vector& b) {
+    int size = a.size();
+    Vector result(size);
+    for (int i = 0; i < size; i++) {
+        result[i] = a[i] + b[i];
+    }
+    return result;
+}
+
 Vector matVecMult(const Matrix& mat, const Vector& vec) {
     int rows = mat.size(), cols = mat[0].size();
     Vector result(rows, 0.0);
